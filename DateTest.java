@@ -26,7 +26,7 @@ public class DateTest {
 	
 	@Test
 	public void testForDateDifference(){
-	int expected[]= {14,4,21};
+	int expected[]= {11};
 	assertArrayEquals(expected,date1.difference(date1));
 	}
 
