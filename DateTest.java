@@ -1,20 +1,33 @@
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
 
 public class DateTest {
-
+	private Date date1;
+	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp(){
+		date1=new Date(17,8,1997);
 	}
-
+	
+	
 	@Test
-	public void test() {
-		Date d1=new Date(10,12,2017);
-		Date d2=new Date(10,12,2016);
-		System.out.println(d2.isSmaller(d1));
-
+	public void testForDate(){
+	String actual=date1.toString();
+	assertEquals("[17/8/1997]",actual);
+	}
+	
+	@Test
+	public void testForSmallerDate(){
+	boolean actual=date1.isSmaller(date1);
+	assertTrue(actual);
+	}
+	
+	@Test
+	public void testForDateDifference(){
+	int expected[]= {14,4,21};
+	assertArrayEquals(expected,date1.difference(date1));
 	}
 
 }
